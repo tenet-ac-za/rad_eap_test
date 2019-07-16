@@ -189,7 +189,7 @@ function process_cert_expiry()
     if [[ ! -s "$CERT_LOCATION" ]]  # cert file does not exist or is empty
     then
       PROG_OUT="CRITICAL: Certificate expiry check was requested, but the certificate was not retrieved."  # probably timeout ?
-      EXIT_CODE=$EXIT_CRITICAL
+      EXIT_CODE=$EXIT_UNKNOWN
       return 1      # cert not retrieved
     else
       get_cert_info "$CERT_LOCATION"
